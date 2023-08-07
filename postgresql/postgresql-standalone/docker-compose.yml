@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=default #specify your db
+      - POSTGRES_USER=admin #specify your user
+      - POSTGRES_PASSWORD=123456 #specify your password
